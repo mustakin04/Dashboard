@@ -10,11 +10,11 @@ const CreateCategory = () => {
       setCategory({...category,[e.target.name]:e.target.value})
   }
   const handleClick=async()=>{
-    console.log(category,"12")
+    // console.log(category,"12")
     const categorydata= await axios.post("http://localhost:5000/api/v1/category/createCategory",category,
       {withCredentials: true}
     )
-      console.log(categorydata)
+      // console.log(categorydata)
     setCategory({name:"",description:""})
   }
   return (

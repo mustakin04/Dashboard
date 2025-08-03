@@ -2,7 +2,10 @@ import React from 'react'
 import  { useState } from "react";
 import {  Input, Typography } from "@material-tailwind/react";
 import axios from 'axios';
+import { useNavigate, useParams } from 'react-router';
 const EditCategory = () => {
+    const {id}=useParams()
+    const navigate=useNavigate()
     const [category,setCategory]=useState({
      name:"",
      description:""
@@ -12,11 +15,14 @@ const EditCategory = () => {
   }
   const handleClick=async()=>{
     console.log(category,"12")
-    const categorydata= await axios.post("http://localhost:5000/api/v1/category/createCategory",category,
+    const categorydata= await axios.put(`http://localhost:5000/api/v1/category/updateCategory/${id}`,category,
       {withCredentials: true}
     )
       console.log(categorydata)
     setCategory({name:"",description:""})
+    setTimeout(() => {
+        navigate("/categoryList")
+    }, 2000);
   }
   return (
      <div className="mt-16">
