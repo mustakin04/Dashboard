@@ -20,6 +20,7 @@ import {
   PowerIcon,
 } from "@heroicons/react/24/solid";
 import { ChevronRightIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
+import { Link } from "react-router";
  
 const Sidebar=()=> {
   const [open, setOpen] = React.useState(0);
@@ -115,19 +116,14 @@ const Sidebar=()=> {
           </AccordionBody>
         </Accordion>
         <ListItem>
-          <ListItemPrefix>
-            <InboxIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          Inbox
-          <ListItemSuffix>
-            <Chip value="14" size="sm" variant="ghost" color="blue-gray" className="rounded-full" />
-          </ListItemSuffix>
+         <Link to='/createCategory'>
+          CreateCategory
+         </Link>
         </ListItem>
         <ListItem>
-          <ListItemPrefix>
-            <UserCircleIcon className="h-5 w-5" />
-          </ListItemPrefix>
-          Profile
+         <Link to="/categoryList">
+          CategoryList
+         </Link>
         </ListItem>
         <ListItem>
           <ListItemPrefix>

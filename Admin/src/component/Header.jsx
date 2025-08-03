@@ -239,7 +239,7 @@ const Header=() =>{
   }, []);
  
   return (
-    <Navbar className=" max-w-full p-2 lg:rounded-full lg:pl-6">
+    <Navbar className=" max-w-full p-2 bg-purple-300 lg:rounded-full lg:pl-6">
       <div className="relative mx-auto flex items-center justify-between text-blue-gray-900">
         <ProfileMenu />
       </div>
